@@ -1,0 +1,33 @@
+using System;
+
+class Exercicio02
+{
+    static void Main()
+    {
+        Console.Write("Digite um número: ");
+        int numero = int.Parse(Console.ReadLine());
+        
+        bool pertence = VerificaFibonacci(numero);
+        
+        if (pertence)
+            Console.WriteLine($"{numero} pertence à sequência de Fibonacci.");
+        else
+            Console.WriteLine($"{numero} não pertence à sequência de Fibonacci.");
+    }
+    
+    static bool VerificaFibonacci(int n)
+    {
+        int a = 0, b = 1, proximo;
+
+        if (n == 0 || n == 1) return true;
+
+        while (b < n)
+        {
+            proximo = a + b;
+            a = b;
+            b = proximo;
+        }
+
+        return b == n;
+    }
+}

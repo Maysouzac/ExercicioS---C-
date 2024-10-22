@@ -1,0 +1,27 @@
+using System;
+
+class Exercicio05
+{
+    static void Main()
+    {
+        Console.Write("Digite uma string: ");
+        string entrada = Console.ReadLine();
+        
+        string stringInvertida = InverterString(entrada);
+        
+        Console.WriteLine("String invertida: " + stringInvertida);
+    }
+    
+    static string InverterString(string str)
+    {
+        char[] charArray = str.ToCharArray();
+        string invertida = "";
+
+        for (int i = charArray.Length - 1; i >= 0; i--)
+        {
+            invertida += charArray[i];
+        }
+
+        return invertida;
+    }
+}
